@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class factorisation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+        scanner.close();
+
+        System.out.println("Factors of " + num + ":");
+        System.out.println("Prime Factors:");
+        printPrimeFactors(num);
+        System.out.println("Non-Prime Factors:");
+        printNonPrimeFactors(num);
+    }
+
+    public static void printPrimeFactors(int num) {
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            while (num % i == 0) {
+                System.out.print(i + " ");
+                num /= i;
+            }
+        }
+        if (num > 1) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static void printNonPrimeFactors(int num) {
+        System.out.print(1 + " "); // 1 is always a non-prime factor
+        for (int i = 2; i <= num; i++) {
+            if (num % i == 0 && !isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.print(num + " "); // The number itself is always a factor
+    }
+
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
