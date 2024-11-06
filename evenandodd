@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+public class separateoddandeven {
+
+    public static void main(String[] args) {
+
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        ArrayList<Integer> evenNumbers = new ArrayList<>();
+        ArrayList<Integer> oddNumbers = new ArrayList<>();
+
+        // Separate even and odd numbers
+        for (int number : array) {
+            if (number % 2 == 0) {
+                evenNumbers.add(number);
+            } else {
+                oddNumbers.add(number);
+            }
+        }
+        System.out.println("array:" + Arrays.toString(array));
+        System.out.println("Even numbers: " + evenNumbers);
+        System.out.println("Odd numbers: " + oddNumbers);
+    }
+}
