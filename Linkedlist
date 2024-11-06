@@ -1,0 +1,47 @@
+import java.util.LinkedList;
+
+public class Linkedlist {
+    public static void main(String[] args) {
+        // Create a LinkedList of integers
+        LinkedList<Integer> numbers = new LinkedList<>();
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+        numbers.add(50);
+
+        System.out.println("Initial LinkedList: " + numbers);
+
+        numbers.set(1, 35);  
+        System.out.println("updating index" + numbers);
+
+        numbers.remove(1); 
+        System.out.println("after removing element"+ numbers);
+
+        numbers.remove(Integer.valueOf(30));
+        System.out.println("After removing 30: " + numbers);
+
+        int size = numbers.size();
+        System.out.println("Size of ArrayList: " + size);
+
+        numbers.set(0, 20);
+        System.out.println("adding element"+numbers);
+
+        boolean contains60 = numbers.contains(60);
+        System.out.println("Contains 60: " + contains60);
+
+        int index = numbers.indexOf(50);
+        System.out.println("index of number" + numbers);
+        
+        numbers.addFirst(5);    
+        numbers.addLast(60);  
+        System.out.println("After adding at first and last: " + numbers);
+        
+        numbers.clear();
+        System.out.println("After clearing all elements: " + numbers);
+
+    }
+
+    
+}
+
